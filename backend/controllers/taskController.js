@@ -7,7 +7,7 @@ const getTasks = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
+// add
 const addTask = async (req, res) => {
   const { title, description, deadline } = req.body;
   try {
@@ -22,7 +22,7 @@ const addTask = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
+// update
 const updateTask = async (req, res) => {
   const { title, description, completed, deadline } = req.body;
   try {
@@ -38,7 +38,7 @@ const updateTask = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
+// delete
 const deleteTask = async (req, res) => {
   try {
     const task = await Task.findById(req.params.id);
@@ -49,4 +49,4 @@ const deleteTask = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// yessir
+module.exports = { getTasks, addTask, updateTask, deleteTask };
